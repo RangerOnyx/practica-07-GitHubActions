@@ -1,0 +1,16 @@
+name: Comandos de shell
+on: push
+jobs:
+  build_and_release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo
+        run: echo "Hello world"
+        shell: bash
+      - name: Display the path
+        run: |
+          node --version
+          npm --version
+          pwd
+          cat /etc/os-release
+        shell: bash
