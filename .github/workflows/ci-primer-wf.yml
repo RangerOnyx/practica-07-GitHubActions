@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Echo
-        run: echo "Hello world"
+        run: echooooo "Hello world"
         shell: bash
       - name: Display the path
         run: |
