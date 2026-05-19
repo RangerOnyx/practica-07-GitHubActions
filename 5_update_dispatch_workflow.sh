@@ -1,3 +1,6 @@
+#!/bin/bash
+
+cat << 'EOF' > .github/workflows/ci-primer-wf.yml
 name: Comandos de shell
 # on: push
 # on:
@@ -35,3 +38,10 @@ jobs:
           Get-Location
           Get-ChildItem
         shell: powershell
+EOF
+
+actionlint --verbose .github/workflows/ci-primer-wf.yml
+
+git add .
+git commit -m "Cambio de disparador a repository_dispatch"
+git push
