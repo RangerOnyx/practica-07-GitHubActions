@@ -1,3 +1,6 @@
+#!/bin/bash
+
+cat << 'EOF' > .github/workflows/ci-env-wf.yml
 name: Variables de entorno
 on:
   push
@@ -46,3 +49,10 @@ jobs:
           echo "STEP_ENV: ${{ toJson(steps) }}"
           echo "RUNNER_OS: ${RUNNER_OS}"
           echo "RUNNER_ARCH: ${RUNNER_ARCH}"
+EOF
+
+actionlint --verbose .github/workflows/ci-env-wf.yml
+
+git add .
+git commit -m "Añadido job log-default-env con variables por defecto"
+git push
