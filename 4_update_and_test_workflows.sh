@@ -1,3 +1,6 @@
+#!/bin/bash
+
+cat << 'EOF' > .github/workflows/ci-primer-wf.yml
 name: Comandos de shell
 on: push
 jobs:
@@ -29,3 +32,10 @@ jobs:
           Get-Location
           Get-ChildItem
         shell: powershell
+EOF
+
+actionlint --verbose .github/workflows/ci-primer-wf.yml
+
+git add .
+git commit -m "Añadido paso de Python y job de Windows"
+git push
